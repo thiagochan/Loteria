@@ -30,39 +30,71 @@ repetem.
 		inteiro opcao
 		
 		escreva("********* Escolha um jogo : Mega-Sena, Quina, Lotomania e Lotofácil ***********")
-		escreva("Digite [1] para Mega-Sena\n")
+		escreva("\nDigite [1] para Mega-Sena\n")
 		escreva("Digite [2] para Quina\n")
 		escreva("Digite [3] para Lotomania\n")
 		escreva("Digite [4] para Lotofácil\n")
 		
+		escreva("Escolha uma opção digitando o número correspondente: ")
 		leia(opcao)
+		escolha(opcao){
+
+		caso 1:
+
+			mega_sena()
+		pare	
+
+		caso 2:
+
+			quina()
+		pare
 		
-	    
+		caso 3:
+
+			lotomania()
+		pare
+		
+		caso 4:
+
+			lotofacil()
+		pare	
+		}
 	}
 
+	
 	funcao mega_sena()
 	{
-  
+  		escreva("Teste")
 	  
 		
 	}
+	
+	
+	
 	funcao quina()
 	{
-  
+  		escreva("Teste 2")
 	  
 		
 	}
+	
+	
+	
 	funcao lotomania()
 	{
-  
+  		escreva("Teste 3")
 	  
 		
 	}
+	
+	
+	
 	funcao lotofacil()
 	{
-  
+  		escreva("Teste 4")
 	  
 		
 	}
-
+	
+	
 }
