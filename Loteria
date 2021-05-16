@@ -45,32 +45,35 @@ programa
 	{
   		inteiro numeros_sorteados[6]
   		inteiro auxiliar
-
+		
+		// Sorteando os números no vetor
   		para(inteiro i=0; i < 6; i++){
   			
 			numeros_sorteados[i] = u.sorteia(1, 60)
 		}
-          para(inteiro l=0; l < 6; l++){
-
-		   para(inteiro j= l + 1; j < 6; j++){
-
-		   	se(numeros_sorteados[j] < numeros_sorteados[l]){
-		   		auxiliar = numeros_sorteados[l]
-		   		numeros_sorteados[l] = numeros_sorteados[j]
-		   		numeros_sorteados[j] = auxiliar
-		   	}
-		   }
+		
+		// Ordenando os números em ordem crescente
+         	para(inteiro l=0; l < 6; l++)
+		{
+			para(inteiro j= l + 1; j < 6; j++)
+			 {
+				se(numeros_sorteados[j] < numeros_sorteados[l])
+				{
+		   			auxiliar = numeros_sorteados[l]
+		   			numeros_sorteados[l] = numeros_sorteados[j]
+		   			numeros_sorteados[j] = auxiliar
+		   		}
+				
+		  	 }
 		}
 		
-		para(inteiro y=0; y < 6; y++){
-			
+		// Escrevendo os números na tela
+		para(inteiro y=0; y < 6; y++)
+		{
 			escreva(numeros_sorteados[y], " ")
-			
 		}
+		
 		retorne 0
-		}
-		
-		
 	}
 	
 	
