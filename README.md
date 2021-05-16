@@ -1,3 +1,2 @@
 # Loteria
-
-aaaaaaaaaaaaaaaaaa
+minecraft é bom
