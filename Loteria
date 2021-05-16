@@ -27,12 +27,17 @@ repetem.
 	funcao inicio()
 	{
   
-		cadeia jogo 
+		inteiro opcao
 		
 		escreva("********* Escolha um jogo : Mega-Sena, Quina, Lotomania e Lotofácil ***********")
-		leia(jogo)
-	  
+		escreva("Digite [1] para Mega-Sena\n")
+		escreva("Digite [2] para Quina\n")
+		escreva("Digite [3] para Lotomania\n")
+		escreva("Digite [4] para Lotofácil\n")
 		
+		leia(opcao)
+		
+	    
 	}
 
 	funcao mega_sena()
