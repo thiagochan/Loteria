@@ -27,16 +27,17 @@ repetem.
 	funcao inicio()
 	{
   
-		inteiro opcao
+		inteiro opcao, numeroApostas, numeroDezenas
 		
 		escreva("********* Escolha um jogo : Mega-Sena, Quina, Lotomania e Lotofácil ***********")
-		escreva("\nDigite [1] para Mega-Sena\n")
+		escreva("Digite [1] para Mega-Sena\n")
 		escreva("Digite [2] para Quina\n")
 		escreva("Digite [3] para Lotomania\n")
 		escreva("Digite [4] para Lotofácil\n")
 		
-		escreva("Escolha uma opção digitando o número correspondente: ")
 		leia(opcao)
+
+		// Vendo qual loteira foi escolhida pelo usuário
 		escolha(opcao){
 
 		caso 1:
