@@ -4,6 +4,7 @@ programa
 	// Thiago Chan Ortega
         // Gabriel dos Santos de Castro
         // Matheus Dutra
+	
 	inclua biblioteca Util --> u
 	
 	funcao inicio()
