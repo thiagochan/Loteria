@@ -2,8 +2,8 @@ programa
 {
 	//Trabalho Feito por :
 	// Thiago Chan Ortega
-     // Gabriel dos Santos de Castro
-     // Matheus Dutra
+        // Gabriel dos Santos de Castro
+        // Matheus Dutra
 	inclua biblioteca Util --> u
 	
 	funcao inicio()
