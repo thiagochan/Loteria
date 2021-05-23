@@ -1,14 +1,22 @@
 programa
 {
+	//Trabalho Feito por :
+	// Thiago Chan Ortega
+     // Gabriel dos Santos de Castro
+     // Matheus Dutra
 	inclua biblioteca Util --> u
-
 	
 	funcao inicio()
 	{
-  
-		inteiro opcao
 		
-		escreva("********* Escolha um jogo : Mega-Sena, Quina, Lotomania e Lotofácil ***********")
+		loterias()
+	
+	}
+
+	funcao inteiro loterias(){
+		inteiro opcao, maxDezenas, minDezenas, maxNumeros, resultado, minNumeros
+		
+		escreva("* Escolha um jogo : Mega-Sena, Quina, Lotomania e Lotofácil *")
 		escreva("\nDigite [1] para Mega-Sena\n")
 		escreva("Digite [2] para Quina\n")
 		escreva("Digite [3] para Lotomania\n")
@@ -16,92 +24,281 @@ programa
 		
 		escreva("Escolha uma opção digitando o número correspondente: ")
 		leia(opcao)
-		escolha(opcao){
-
-		caso 1:
-
-			mega_sena()
-		pare	
-
-		/*caso 2:
-
-			quina()
-		pare
 		
-		caso 3:
+		limpa()
 
-			lotomania()
-		pare
-		
-		caso 4:
-
-			lotofacil()
-		pare	*/
-		}
-	}
-
-	
-	funcao inteiro mega_sena()
-	{
-  		inteiro numeros_sorteados[6]
-  		inteiro auxiliar
-		
-		// Sorteando os números no vetor
-  		para(inteiro i=0; i < 6; i++){
-  			
-			numeros_sorteados[i] = u.sorteia(1, 60)
-		}
-		
-		// Ordenando os números em ordem crescente
-         	para(inteiro l=0; l < 6; l++)
+		     minDezenas = 0
+			maxDezenas = 0
+			minNumeros = 0
+			maxNumeros = 0       
+			resultado = 0        
+		se(opcao == 1)            
 		{
-			para(inteiro j= l + 1; j < 6; j++)
-			 {
-				se(numeros_sorteados[j] < numeros_sorteados[l])
-				{
-		   			auxiliar = numeros_sorteados[l]
-		   			numeros_sorteados[l] = numeros_sorteados[j]
-		   			numeros_sorteados[j] = auxiliar
-		   		}
+			escreva("* MEGA-SENA *\n")
+			minDezenas = 6
+			maxDezenas = 15
+			minNumeros = 1
+			maxNumeros = 60
+			resultado = 6
+		}
+		se(opcao == 2)
+		{
+			escreva("* QUINA *\n")
+			minDezenas = 5
+			maxDezenas = 15
+			minNumeros = 1
+			maxNumeros = 80
+			resultado = 6
+		}
+		se(opcao == 3)
+		{
+			escreva("* LOTOMANIA *\n")
+			maxDezenas = 50 //50 números é o único número de dezenas que se pode apostar
+			maxNumeros = 99
+			minNumeros = 0
+			resultado = 20
+		}
+		se(opcao == 4)
+		{
+			escreva("* LOTOFÁCIL *\n")
+			minDezenas = 15
+			maxDezenas = 20
+			minNumeros = 1
+			maxNumeros = 25
+			resultado = 15
+		}
+			
+		inteiro numerosPedidos[100]
+		inteiro dezenas = 0
+
+		se(opcao != 3){
+			escreva("Quantas dezenas voce vai querer apostar? (de "+ minDezenas +" à "+ maxDezenas+")\n")
+			leia(dezenas)
+			
+			enquanto(dezenas < minDezenas ou dezenas > maxDezenas){
+	
+				escreva("\nEscolha um número de dezenas válido, de ", minDezenas, " á ", maxDezenas, "." )
+				leia(dezenas)
+			}
+			limpa()
+		}senao
+		{
+			dezenas = 50
+		}
+
+//preço das dezenas - MEGA-SENA
+se(opcao == 1)
+{
+		se(dezenas == 6){
+			escreva("\nVai ficar um total de R$4,50")
+		}senao se(dezenas == 7){
+			escreva("\nVai ficar um total de R$31,50")
+		}senao se(dezenas == 8){
+			escreva("\nVai ficar um total de R$126,00")
+		}senao se(dezenas == 9){
+			escreva("\nVai ficar um total de R$378,00")
+		}senao se(dezenas == 10){
+			escreva("\nVai ficar um total de R$945,00")
+		}senao se(dezenas == 11){
+			escreva("\nVai ficar um total de R$2.079,00")
+		}senao se(dezenas == 12){
+			escreva("\nVai ficar um total de R$4.158,00")
+		}senao se(dezenas == 13){
+			escreva("\nVai ficar um total de R$7.722,00")
+		}senao se(dezenas == 14){
+			escreva("\nVai ficar um total de R$13.513,50")
+		}senao se(dezenas == 15){
+			escreva("\nVai ficar um total de R$22.522,50")
+		}
+}
+
+//preço das dezenas - QUINA
+se(opcao == 2)
+{
+		se(dezenas == 5){
+			escreva("\nVai ficar um total de R$2,00")
+		}senao se(dezenas == 6){
+			escreva("\nVai ficar um total de R$12,00")
+		}senao se(dezenas == 7){
+			escreva("\nVai ficar um total de R$42,00")
+		}senao se(dezenas == 8){
+			escreva("\nVai ficar um total de R$112,00")
+		}senao se(dezenas == 9){
+			escreva("\nVai ficar um total de R$252,00")
+		}senao se(dezenas == 10){
+			escreva("\nVai ficar um total de R$504,00")
+		}senao se(dezenas == 11){
+			escreva("\nVai ficar um total de R$924,00")
+		}senao se(dezenas == 12){
+			escreva("\nVai ficar um total de R$1.584,00")
+		}senao se(dezenas == 13){
+			escreva("\nVai ficar um total de R$2.574,00")
+		}senao se(dezenas == 14){
+			escreva("\nVai ficar um total de R$4.004,00")
+		}senao se(dezenas == 15){
+			escreva("\nVai ficar um total de R$6.006,00")
+		}
+		
+}
+
+//preço das dezenas - LOTOMANIA
+se(opcao == 3)
+{
+		se(dezenas == 50){
+			escreva("\nVai ficar um total de R$2.50")
+		}
+}
+
+
+//preço das dezenas - LOTOFÁCIL
+se(opcao == 4)
+{
+		se(dezenas == 15){
+			escreva("\nVai ficar um total de R$2,50")
+		}senao se(dezenas == 16){
+			escreva("\nVai ficar um total de R$40,00")
+		}senao se(dezenas == 17){
+			escreva("\nVai ficar um total de R$340,00")
+		}senao se(dezenas == 18){
+			escreva("\nVai ficar um total de R$2.040,00")
+		}senao se(dezenas == 19){
+			escreva("\nVai ficar um total de R$9.690,00")
+		}senao se(dezenas == 20){
+			escreva("\nVai ficar um total de R$38.760,00")
+		}
+		
+}
+//Números Sendo escolhidos
+		cadeia escolher
+
+		escreva("\nvoce vai querer escolher os números da aposta, ou vai querer a surpresinha ? Digite 'aposta' para escolher, ou digite 'surpresinha' para surpresinha. ")
+		         leia(escolher)
+
+		se( escolher == "aposta" ){
+
+			para(inteiro i = 0; i < dezenas; i++){
 				
-		  	 }
+				escreva("\nDigite um número : ")
+				leia(numerosPedidos[i])
+				limpa()
+
+				enquanto(numerosPedidos[i] < minNumeros ou numerosPedidos[i] > maxNumeros){
+					escreva("\nDigite um número entre ", minNumeros, " a ", maxNumeros," : ")
+					leia(numerosPedidos[i])
+					limpa()
+				}
+				
+			}
+// Surpresinha
+		}senao{
+			para(inteiro i = 0; i < dezenas; i++){
+
+				numerosPedidos[i] = u.sorteia(minNumeros, maxNumeros)
+				limpa()
+			}
+			
+			inteiro numerosAuxiliar[100]
+
+			para(inteiro i = 0; i < dezenas; i++){
+
+				para(inteiro j = i + 0; j < dezenas; j++){
+
+					numerosAuxiliar[j] = numerosPedidos[i]
+				}
+			para(inteiro l = 0; l < dezenas; l++){
+
+			para(inteiro k = l + 1; k < dezenas; k++){
+
+				se(numerosPedidos[l] == numerosPedidos[k]){
+					
+					numerosPedidos[l] = u.sorteia(minDezenas, maxNumeros)
+				}
+			}
 		}
 		
-		// Escrevendo os números na tela
-		para(inteiro y=0; y < 6; y++)
+
+	}
+		}
+		
+		
+		escreva("Os seus números escolhidos são : ")
+		
+		para(inteiro i = 0; i < dezenas; i++){
+
+			escreva(numerosPedidos[i], " ")
+		}
+		
+
+//Números Sorteados
+		inteiro numerosSorteados[25]
+
+		para(inteiro i=0; i < resultado; i++){
+			 numerosSorteados[i] = u.sorteia(minNumeros, maxNumeros)
+		}
+
+		inteiro auxiliarDois[25]
+
+		para(inteiro i = 0; i < resultado; i++){
+
+			para(inteiro j = i+0; j < resultado; j++){
+
+				auxiliarDois[j] = numerosSorteados[i]
+			}
+			para(inteiro l = 0; l < resultado; l++){
+
+				para(inteiro k = l + 1; k < resultado; k++){
+
+					se(numerosSorteados[l] == numerosSorteados[k]){
+
+						numerosSorteados[l] = u.sorteia(minNumeros, maxNumeros)
+					}
+				}
+			}
+		}
+
+
+//Números sorteados sendo colocados em ordem crescente
+		inteiro auxiliar
+		
+		para(inteiro i=0; i < resultado; i++){
+
+			para(inteiro j = i + 1; j < resultado; j++){
+
+				se(numerosSorteados[j] < numerosSorteados[i]){
+					
+					auxiliar = numerosSorteados[i]
+					numerosSorteados[i] = numerosSorteados[j]
+					numerosSorteados[j] = auxiliar 
+				}
+			}
+		}
+//Números sorteados sendo lidos em ordem crescente
+
+		escreva("\nOs números sorteados são : ")
+
+		para(inteiro i = 0; i < resultado; i++){
+
+			escreva(numerosSorteados[i], " ")
+		}
+		
+
+		// Quantos números o usuário acertou
+
+		inteiro acertos = 0
+
+		para(inteiro i = 0; i < resultado; i++)
 		{
-			escreva(numeros_sorteados[y], " ")
+			para(inteiro j = 0; j < 6; j++)
+			{
+				se(numerosPedidos[i] == numerosSorteados[j])
+				{
+					acertos++
+				}
+			}
 		}
-		
+
+		escreva("\nVocê acertou " + acertos + " números!")
+
 		retorne 0
-	}
-	
-	
-	/*
-	funcao quina()
-	{
-  		escreva("Teste 2")
-	  
-		
-	}
-	
-	
-	
-	funcao lotomania()
-	{
-  		escreva("Teste 3")
-	  
-		
-	}
-	
-	
-	
-	funcao lotofacil()
-	{
-  		escreva("Teste 4")
-	  
-		
-	}
-	*/
-	
+}
 }
